@@ -1,0 +1,3708 @@
+{
+	"info": {
+		"_postman_id": "77156525-4f12-47ed-a9dd-84a0bbce7c08",
+		"name": "eBiz 6.0 SOA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36430401",
+		"_collection_link": "https://planetary-resonance-623638.postman.co/workspace/New-Team-Workspace~01a21915-2c84-4702-b821-bda77fe8efea/collection/36430401-77156525-4f12-47ed-a9dd-84a0bbce7c08?action=share&source=collection_link&creator=36430401"
+	},
+	"item": [
+		{
+			"name": "Login related actions",
+			"item": [
+				{
+					"name": "UserInformation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}/services/UserInformation",
+							"host": [
+								"{{serviceRoot}}"
+							],
+							"path": [
+								"services",
+								"UserInformation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Test\",\n  \"lastName\": \"Test2\",\n  \"email\": \"test@aptify.com\",\n  \"password\": \"Aptify50\"\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}/v1/User/Register",
+							"host": [
+								"{{serviceRoot}}"
+							],
+							"path": [
+								"v1",
+								"User",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authentication",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"AuthenticatedPersonId\", data.LinkId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\": \"stacy@gmail.com\",\r\n    \"Password\": \"Aptify50\",\r\n    \"RememberMe\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceRoot}}/services/Authentication/Login/ebusinesswebuser",
+							"host": [
+								"{{serviceRoot}}"
+							],
+							"path": [
+								"services",
+								"Authentication",
+								"Login",
+								"ebusinesswebuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"if (responseCode.code === 200) {",
+									"    postman.clearEnvironmentVariable(\"AuthenticatedPersonId\");",
+									"}",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}/services/Authentication/Logout/",
+							"host": [
+								"{{serviceRoot}}"
+							],
+							"path": [
+								"services",
+								"Authentication",
+								"Logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authentication Query Params",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"AuthenticatedPersonId\", data.LinkId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}/services/Authentication/Login/ebusinesswebuser?Username=JaviG&Password=Aptify50",
+							"host": [
+								"{{serviceRoot}}"
+							],
+							"path": [
+								"services",
+								"Authentication",
+								"Login",
+								"ebusinesswebuser"
+							],
+							"query": [
+								{
+									"key": "Username",
+									"value": "JaviG"
+								},
+								{
+									"key": "Password",
+									"value": "Aptify50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authentication Query Params JaviG",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"AuthenticatedPersonId\", data.LinkId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}/services/Authentication/Login/ebusinesswebuser?Username=JaviG&Password=Aptify50",
+							"host": [
+								"{{serviceRoot}}"
+							],
+							"path": [
+								"services",
+								"Authentication",
+								"Login",
+								"ebusinesswebuser"
+							],
+							"query": [
+								{
+									"key": "Username",
+									"value": "JaviG"
+								},
+								{
+									"key": "Password",
+									"value": "Aptify50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authentication Query Params SQL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"AuthenticatedPersonId\", data.LinkId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{serviceRoot}}/services/Authentication/Login/SQL?Username=Solid.User&Password=Slice90Refill11Having",
+							"host": [
+								"{{serviceRoot}}"
+							],
+							"path": [
+								"services",
+								"Authentication",
+								"Login",
+								"SQL"
+							],
+							"query": [
+								{
+									"key": "Username",
+									"value": "Solid.User"
+								},
+								{
+									"key": "Password",
+									"value": "Slice90Refill11Having"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"if (responseCode.code === 200) {",
+									"    postman.clearEnvironmentVariable(\"AuthenticatedPersonId\");",
+									"}",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "AptifyAuthorization",
+								"value": "ebusinesswebuser ed0c941f-70ab-4874-9ac9-82bd1e15c3f9",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}/services/Authentication/Logout",
+							"host": [
+								"{{serviceRoot}}"
+							],
+							"path": [
+								"services",
+								"Authentication",
+								"Logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Service Data Object eBiz",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}/services/DataObjects/spFindInvoiceByOrderIDAndPersonID__c?OrderID=16763&BillToID=188",
+							"host": [
+								"{{serviceRoot}}"
+							],
+							"path": [
+								"services",
+								"DataObjects",
+								"spFindInvoiceByOrderIDAndPersonID__c"
+							],
+							"query": [
+								{
+									"key": "OrderID",
+									"value": "16763"
+								},
+								{
+									"key": "BillToID",
+									"value": "188"
+								}
+							]
+						},
+						"description": "Will demonstrate hohhw to get data from a Data Service Object that expects a parameter."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Catalog",
+			"item": [
+				{
+					"name": "Product Catalog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/Products?language=fr",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Products"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "fr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Catalog Multi",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/Products/1",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/Products/32",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Products",
+								"32"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event Catalog",
+			"item": [
+				{
+					"name": "Event",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/Events",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event by TopLevelOnly",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/Events?TopLevelOnly=true",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Events"
+							],
+							"query": [
+								{
+									"key": "TopLevelOnly",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event by ID session",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/Events/9961/Sessions/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Events",
+								"9961",
+								"Sessions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event by ID speaker info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/Events/9961/Speakers?includeSessionSpeakers=true",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Events",
+								"9961",
+								"Speakers"
+							],
+							"query": [
+								{
+									"key": "includeSessionSpeakers",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " speaker info By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/Events/9961/Speakers",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Events",
+								"9961",
+								"Speakers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event by ID sponser info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/Events/9961/Sponsors?includeSessionSponsors=true",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Events",
+								"9961",
+								"Sponsors"
+							],
+							"query": [
+								{
+									"key": "includeSessionSponsors",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Event",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/Events",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"Events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event Create Attendee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Angha\",\r\n  \"lastName\": \"Test\",\r\n  \"email\": \"angha.test\",\r\n  \"city\": \"California\"\r\n} "
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/Events/Attendees/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Events",
+								"Attendees",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart based actions",
+			"item": [
+				{
+					"name": "Add to Cart General Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validate product name and type\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"12oz Sampco Mug\");",
+									"    pm.expect(pm.response.text()).to.include(\"General\");",
+									"    tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"    tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productId\" :48,\n\t\"quantity\": 1\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}/v1/ShoppingCarts/Items/GeneralProduct",
+							"host": [
+								"{{serviceRoot}}"
+							],
+							"path": [
+								"v1",
+								"ShoppingCarts",
+								"Items",
+								"GeneralProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Cart Fundraising Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productId\" :2001,\n\t\"amount\": 30\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}/v1/ShoppingCarts/Items/FundraisingProduct",
+							"host": [
+								"{{serviceRoot}}"
+							],
+							"path": [
+								"v1",
+								"ShoppingCarts",
+								"Items",
+								"FundraisingProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Cart Event Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validate product name and type\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"12oz Sampco Mug\");",
+									"    pm.expect(pm.response.text()).to.include(\"General\");",
+									"    tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"    tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productId\" : [11115],\n\t\"attendeeId\": 153\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Items/EventProduct",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Items",
+								"EventProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Cart Class Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validate product name and type\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"12oz Sampco Mug\");",
+									"    pm.expect(pm.response.text()).to.include(\"General\");",
+									"    tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"    tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productId\" : 564,\n\t\"studentId\": 10,\n    \"classId\": 242\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Items/ClassProduct",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Items",
+								"ClassProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Cart Subscription Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Validate product name and type\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"12oz Sampco Mug\");",
+									"    pm.expect(pm.response.text()).to.include(\"General\");",
+									"    tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"    tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productId\" : 1\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Items/SubscriptionGeneralProduct",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Items",
+								"SubscriptionGeneralProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping Cart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping Cart Info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping Cart Items",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"tests[\"Validate item ID for 1\"] = jsonData[0].id === 1;",
+									"tests[\"Validate item ID for 2\"] = jsonData[1].id === 2;",
+									"tests[\"Validate item ID for 3\"] = jsonData[2].id === 3;*/",
+									"",
+									"",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Items?language=fr",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Items"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "fr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping Cart Items Event",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"tests[\"Validate item ID for 1\"] = jsonData[0].id === 1;",
+									"tests[\"Validate item ID for 2\"] = jsonData[1].id === 2;",
+									"tests[\"Validate item ID for 3\"] = jsonData[2].id === 3;*/",
+									"",
+									"",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Items/EventProduct?language=fr",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Items",
+								"EventProduct"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "fr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping Cart Items Event Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"tests[\"Validate item ID for 1\"] = jsonData[0].id === 1;",
+									"tests[\"Validate item ID for 2\"] = jsonData[1].id === 2;",
+									"tests[\"Validate item ID for 3\"] = jsonData[2].id === 3;*/",
+									"",
+									"",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Items/SubscriptionGeneralProduct?language=fr",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Items",
+								"SubscriptionGeneralProduct"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "fr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping Cart Items for General Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"tests[\"Validate item ID for 1\"] = jsonData[0].id === 1;",
+									"tests[\"Validate item ID for 2\"] = jsonData[1].id === 2;",
+									"tests[\"Validate item ID for 3\"] = jsonData[2].id === 3;*/",
+									"",
+									"",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Items/1/GeneralProduct",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Items",
+								"1",
+								"GeneralProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping Cart Items for Event Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"tests[\"Validate item ID for 1\"] = jsonData[0].id === 1;",
+									"tests[\"Validate item ID for 2\"] = jsonData[1].id === 2;",
+									"tests[\"Validate item ID for 3\"] = jsonData[2].id === 3;*/",
+									"",
+									"",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Items?language=fr",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Items"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "fr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping Cart Items for Susbcription Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"/*var jsonData = JSON.parse(responseBody);",
+									"tests[\"Validate item ID for 1\"] = jsonData[0].id === 1;",
+									"tests[\"Validate item ID for 2\"] = jsonData[1].id === 2;",
+									"tests[\"Validate item ID for 3\"] = jsonData[2].id === 3;*/",
+									"",
+									"",
+									"",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Items/1/SubscriptionGeneralProduct",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Items",
+								"1",
+								"SubscriptionGeneralProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Shopping cart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"billingAddressId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update MD Shopping Address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"shipToAddressLine1\": \"123 Test Road\",\r\n  \"shipToAddressLine2\": \"Apt 223\",\r\n  \"shipToCity\": \"Bethesda\",\r\n  \"shipToState\": \"MD\",\r\n  \"shipToZipCode\": \"20814\",\r\n  \"shipToCountryCodeID\": 222\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update VA Shopping Address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"shipToAddrLine1\": \"7900 Westpark Drive\",\r\n  \"shipToCity\": \"Mc Lean\",\r\n  \"shipToState\": \"VA\",\r\n  \"shipToZipCode\": \"22102\",\r\n  \"shipToCountryCodeID\": 222\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IIC MD Update SC Address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"line1\": \"123 Test Road\",\r\n  \"line2\": \"Apt 223\",\r\n  \"city\": \"Bethesda\",\r\n  \"stateProvince\": \"MD\",\r\n  \"postalCode\": \"20814\",\r\n  \"country\": \"United States\"\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Address/ShipTo",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Address",
+								"ShipTo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IIC VA Update SC Address Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"line1\": \"7900 Westpark Drives\",\r\n  \"city\": \"Mc Lean\",\r\n  \"stateProvince\": \"VA\",\r\n  \"postalCode\": \"22102\",\r\n  \"country\": \"United States\"\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Address/ShipTo",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Address",
+								"ShipTo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Shopping cart for General Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"shippingAddressId\": 19145\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Shopping cart for Event Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"badgeName\": \"sample\",\r\n  \"badgeCompanyName\": \"string\",\r\n  \"badgeTitle\": \"title string \"\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Items/1/EventProduct",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Items",
+								"1",
+								"EventProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Shopping cart for Susbscription Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"autoRenew\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Items/1/SubscriptionGeneralProduct",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Items",
+								"1",
+								"SubscriptionGeneralProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping cart",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}/ShoppingCarts",
+							"host": [
+								"{{serviceRoot}}"
+							],
+							"path": [
+								"ShoppingCarts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping cart items by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Items/1",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Items",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Checkout",
+			"item": [
+				{
+					"name": "Valid Payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ValidPayments",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ValidPayments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment PO",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{     \n  \"purchaseOrderNumber\": \"123\"\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Checkout/PurchaseOrder",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Checkout",
+								"PurchaseOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"addresses\": [\"test.shettrich@cwa-union.org\"]\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/2014019/OrderHistory/848417/SendConfirmationEmail",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"2014019",
+								"OrderHistory",
+								"848417",
+								"SendConfirmationEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Remote",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Checkout/GetRemotePaymentRequest",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Checkout",
+								"GetRemotePaymentRequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Credit card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cvv\" : 123,\r\n  \"cardNumber\": \"4111111111111111\",\r\n  \"expirationMonth\": 2,\r\n  \"expirationYear\": 2025\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Checkout/CreditCard",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Checkout",
+								"CreditCard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Zero Dollar Payment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Checkout/ZeroPaymentOrder",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Checkout",
+								"ZeroPaymentOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment SPM",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"savedPaymentId\" : 7,\r\n  \"cvv\" : 123\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/MembershipApplication/Checkout/SavedPayment",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"MembershipApplication",
+								"Checkout",
+								"SavedPayment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment ACH",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountNumber\": 1111111111,\r\n  \"accountName\": \"ACA\",\r\n  \"bank\": \"ASDF\",\r\n  \"aba\": \"122000661\",\r\n  \"saveForFutureUse\": false\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/Checkout/ACH",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								"Checkout",
+								"ACH"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order History ",
+			"item": [
+				{
+					"name": "ProfilePersons",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "AptifyAuthorization",
+								"value": "ebusinesswebuser df879222-48cc-43a9-9290-053779f4824e",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProfilePersons",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "AptifyAuthorization",
+								"value": "eBusinessWebUser c6eb5260-5d07-422e-b709-d37047a23527",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"Test\"\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order Histoy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/OrderHistory/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"OrderHistory",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order Histoy by orderid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\":\"anghaa\",\n     \"lastName\":\"test\"\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/OrderHistory/10200",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"OrderHistory",
+								"10200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order History by orderid/items",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\":\"anghaa\",\n     \"lastName\":\"test\"\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/OrderHistory/:OrderId/Items",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"OrderHistory",
+								":OrderId",
+								"Items"
+							],
+							"variable": [
+								{
+									"key": "OrderId",
+									"value": "10200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Outstanding Orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\":\"anghaa\",\n     \"lastName\":\"test\"\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/OrderHistory/OutstandingOrders",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"OrderHistory",
+								"OutstandingOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProfilePersons Topic Codes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/TopicCodes",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"TopicCodes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fundraising related actions",
+			"item": [
+				{
+					"name": "Fundraising Products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/FundraisingProducts/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"FundraisingProducts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fundraising Checkout by Credit Card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\" : 2001,\r\n  \"amount\": \"5.1285\",\r\n  \"cvv\" : 123,\r\n  \"cardNumber\": \"4111111111111111\",\r\n  \"expirationMonth\": 2,\r\n  \"expirationYear\": 2023,\r\n  \"saveForFutureUse\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/Fundraising/Checkout/CreditCard",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Fundraising",
+								"Checkout",
+								"CreditCard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fundraising Checkout by ACH",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 2001,\r\n  \"amount\": 300,\r\n  \"accountNumber\": 1111111111,\r\n  \"accountName\": \"ACA\",\r\n  \"bank\": \"ASDF\",\r\n  \"aba\": \"122000661\",\r\n  \"saveForFutureUse\": false\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/Fundraising/Checkout/ACH",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Fundraising",
+								"Checkout",
+								"ACH"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fundraising Checkout by SPM",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 2001,\r\n  \"amount\": 300,\r\n  \"savedPaymentId\" : 7,\r\n  \"cvv\" : 123\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/Fundraising/Checkout/SavedPayment",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Fundraising",
+								"Checkout",
+								"SavedPayment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Membership Application related actions",
+			"item": [
+				{
+					"name": "Membership Application Definition",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/MembershipApplicationDefinition/Current/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"MembershipApplicationDefinition",
+								"Current",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Membership Application Products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/MembershipApplicationDefinition/Current/Products",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"MembershipApplicationDefinition",
+								"Current",
+								"Products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MembershipApplication",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/MembershipApplication",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"MembershipApplication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Membership Application",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productId\": 2\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/MembershipApplication",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"MembershipApplication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Membership Application Checkout by Credit Card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cvv\" : 123,\r\n  \"cardNumber\": \"4111111111111111\",\r\n  \"expirationMonth\": 2,\r\n  \"expirationYear\": 2023,\r\n  \"saveForFutureUse\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/MembershipApplication/Checkout/CreditCard",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"MembershipApplication",
+								"Checkout",
+								"CreditCard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Membership Application Checkout by ACH",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountNumber\": 1111111111,\r\n  \"accountName\": \"ACA\",\r\n  \"bank\": \"ASDF\",\r\n  \"aba\": \"122000661\",\r\n  \"saveForFutureUse\": false\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/MembershipApplication/Checkout/ACH",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"MembershipApplication",
+								"Checkout",
+								"ACH"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Membership Application Checkout by SPM",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"savedPaymentId\" : 7,\r\n  \"cvv\" : 123\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/MembershipApplication/Checkout/SavedPayment",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"MembershipApplication",
+								"Checkout",
+								"SavedPayment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Make Payment related actions",
+			"item": [
+				{
+					"name": "Create Payment by ACH",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"paymentAmount\" : 1,\r\n  \"accountNumber\": 1111111111,\r\n  \"accountName\": \"ACA\",\r\n  \"bank\": \"ASDF\",\r\n  \"aba\": \"122000661\",\r\n  \"saveForFutureUse\": false\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/OrderHistory/10200/MakePayment/ACH",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"OrderHistory",
+								"10200",
+								"MakePayment",
+								"ACH"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Payment by SPM",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"savedPaymentId\" : 7,\r\n  \"cvv\" : 123\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/OrderHistory/10200/MakePayment/SavedPayment",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"OrderHistory",
+								"10200",
+								"MakePayment",
+								"SavedPayment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Payment by Credit Card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"paymentAmount\" : 5,\r\n  \"cvv\" : 123,\r\n  \"cardNumber\": \"4111111111111111\",\r\n  \"expirationMonth\": 2,\r\n  \"expirationYear\": 2023,\r\n  \"saveForFutureUse\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/OrderHistory/10200/MakePayment/CreditCard",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"OrderHistory",
+								"10200",
+								"MakePayment",
+								"CreditCard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Saved Payment Method",
+			"item": [
+				{
+					"name": "SPM",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/SavedPaymentMethods/CreditCard",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"SavedPaymentMethods",
+								"CreditCard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SPM By ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/SavedPaymentMethods/CreditCard/18",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"SavedPaymentMethods",
+								"CreditCard",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create SPM",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"creditCardNumber\": \"4111111111111111\",\n\t\"expirationMonth\": 2,\n    \"expirationYear\": 2023,\n    \"cvv\": 123\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/SavedPaymentMethods/CreditCard/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"SavedPaymentMethods",
+								"CreditCard",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update SPM",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"expirationMonth\": 2,\n    \"expirationYear\": 2023\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/SavedPaymentMethods/CreditCard/1",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"SavedPaymentMethods",
+								"CreditCard",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete SPM",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"OK\"] = responseCode.name.has(\"OK\");",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"expirationMonth\": 2,\n    \"expirationYear\": 2023\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/SavedPaymentMethods/1",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"SavedPaymentMethods",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Address related actions",
+			"item": [
+				{
+					"name": "Profile Addresses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfileAddresses/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfileAddresses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Address by address name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfileAddresses/Business Address",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfileAddresses",
+								"Business Address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile Address",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"line1\":\"test address\"\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfileAddresses/Business Address",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfileAddresses",
+								"Business Address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Address : MakePreferredBilling",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfileAddresses/Business Address/MakePreferredBilling",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfileAddresses",
+								"Business Address",
+								"MakePreferredBilling"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Address : MakePreferredShipping",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfileAddresses/Business Address/MakePreferredShipping",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfileAddresses",
+								"Business Address",
+								"MakePreferredShipping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Address : MakePreferredMailing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PersonAddresses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfilePhones/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfilePhones",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add PersonAddress",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-length": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Transfer-Encoding",
+								"value": "chunked"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"addressName\": \"test2 address\",\r\n  \"line1\": \"string 2\",\r\n  \"line2\": \"string 3\",\r\n  \"city\": \"pune\",\r\n  \"postalCode\": \"145\",\r\n  \"country\": \"India\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/PersonAddresses/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"PersonAddresses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update PersonAddress",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"line1\" : \"sample line 2 \"\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/PersonAddresses/test address",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"PersonAddresses",
+								"test address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Profile Address",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfileAddresses/Business Address",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfileAddresses",
+								"Business Address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Person Address",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/PersonAddresses/test address",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"PersonAddresses",
+								"test address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Countries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/Countries",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "States by country code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/Country/222/States",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Country",
+								"222",
+								"States"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Phone related actions",
+			"item": [
+				{
+					"name": "Profile Phones",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfilePhones/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfilePhones",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Phones by phone name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfilePhones/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfilePhones",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile Phones",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfilePhones/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfilePhones",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Phone: MakePreferredPhone",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfilePhones/Business Phone/MakePreferredPhone",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfilePhones",
+								"Business Phone",
+								"MakePreferredPhone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PersonPhones",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\":\"anghaa\",\n     \"lastName\":\"test\"\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfilePhones/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfilePhones",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add PersonPhone",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"sample phone\",\n  \"countryCode\": \"54321\",\n  \"areaCode\": \"1234\",\n  \"phone\": \"123456\",\n  \"phoneExtension\": \"123\"\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/PersonPhones/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"PersonPhones",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Person Phones",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfilePhones/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfilePhones",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Profile Phones",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/ProfilePhones/Business Phone",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"ProfilePhones",
+								"Business Phone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Person Phones",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/PersonPhones/Sample Phone",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"PersonPhones",
+								"Sample Phone"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coupon related actions",
+			"item": [
+				{
+					"name": "Coupon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/Coupon/GLASS50",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"Coupon",
+								"GLASS50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cart for coupon",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ShoppingCarts/",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ShoppingCarts",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Topic Codes related actions",
+			"item": [
+				{
+					"name": "Topic Codes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/TopicCodes",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"TopicCodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Topic Code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"topicCodeId\": 3\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/TopicCodes",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"TopicCodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Topic Code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"topicCodeId\": 2\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/TopicCodes",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"TopicCodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Topic Code",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{serviceRoot}}v1/ProfilePersons/{{AuthenticatedPersonId}}/TopicCodes/2",
+							"host": [
+								"{{serviceRoot}}v1"
+							],
+							"path": [
+								"ProfilePersons",
+								"{{AuthenticatedPersonId}}",
+								"TopicCodes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
