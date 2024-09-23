@@ -1,0 +1,23 @@
+<OBJECT CLASS="Database Objects" ID="20971" FULL="FULL" VERSION="1126854"><FIELD NAME="Name">spGeteBusiness6_0PetAppointments__c</FIELD><FIELD NAME="Description" /><FIELD NAME="Type">Stored Procedure</FIELD><FIELD NAME="DB">APTIFY</FIELD><FIELD NAME="SQLText">CREATE PROCEDURE [dbo].[spGeteBusiness6_0PetAppointments__c] 
+(      
+	@Request_Petid INT = -1,
+	@AuthenticatedAttributes_AuthenticatedPrincipalRecordId INT 
+)
+AS 
+BEGIN
+	SELECT 
+		pa.ID,
+		pa.PetID, 
+		p.Name  'PetName',
+		pa.AppointmentType,
+		pa.AppointmentDate,
+		pa.Comments
+	FROM 
+		PetAppointment__c pa
+		INNER JOIN 
+			Pet__c    p 
+			ON 
+				pa.PetID=p.ID
+	WHERE (p.ID = @Request_Petid OR @Request_Petid IS NULL)
+		AND p.OwnerID = @AuthenticatedAttributes_AuthenticatedPrincipalRecordId;
+END</FIELD><FIELD NAME="GrantSQLText">grant execute on spGeteBusiness6_0PetAppointments__c to EndUsers;</FIELD><FIELD NAME="IsGenerated">0</FIELD><FIELD NAME="IsGrantSQLGenerated">0</FIELD><SUBTYPE NAME="DBObjectRequirement" /></OBJECT>

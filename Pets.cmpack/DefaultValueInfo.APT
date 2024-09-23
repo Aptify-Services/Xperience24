@@ -1,0 +1,15 @@
+PetAppointments__c,ID,NULL
+PetAppointments__c,PetID,NULL
+Pets__c,ID,NULL
+Pets__c,OwnerID,NULL
+Pets__c,AnimalSizeID,NULL
+Pets__c,PetBreedID,NULL
+Pets__c,AnimalTypeID,NULL
+PetBreeds__c,ID,NULL
+PetBreeds__c,Name,NULL
+AnimalSizes__c,ID,NULL
+AnimalSizes__c,Name,NULL
+AnimalTypes__c,ID,NULL
+AnimalTypes__c,Name,NULL
+AnimalGroups__c,ID,NULL
+AnimalGroups__c,Name,NULL

@@ -1,0 +1,6 @@
+<OBJECT CLASS="Database Objects" ID="20990" FULL="FULL" VERSION="1129715"><FIELD NAME="Name">spGetPetAppointmentFormInformation__c</FIELD><FIELD NAME="Description">X24</FIELD><FIELD NAME="Type">Stored Procedure</FIELD><FIELD NAME="DB">APTIFY</FIELD><FIELD NAME="SQLText">CREATE PROCEDURE spGetPetAppointmentFormInformation__c
+	@PetID AS int
+AS
+BEGIN
+	SELECT * FROM PetAppointment__c WHERE PetID = @PetID;
+END</FIELD><FIELD NAME="GrantSQLText">grant execute on spGetPetAppointmentFormInformation__c to EndUsers</FIELD><FIELD NAME="IsGenerated">0</FIELD><FIELD NAME="IsGrantSQLGenerated">0</FIELD><SUBTYPE NAME="DBObjectRequirement" /></OBJECT>

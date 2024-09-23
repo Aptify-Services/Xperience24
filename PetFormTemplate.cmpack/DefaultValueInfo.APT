@@ -1,0 +1,5 @@
+Pets__c,ID,NULL
+Pets__c,OwnerID,NULL
+Pets__c,AnimalSizeID,NULL
+Pets__c,PetBreedID,NULL
+Pets__c,AnimalTypeID,NULL

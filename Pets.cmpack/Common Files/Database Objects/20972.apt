@@ -1,0 +1,56 @@
+<OBJECT CLASS="Database Objects" ID="20972" FULL="FULL" VERSION="1126900"><FIELD NAME="Name">spGeteBusiness6_0GetPetInfoAndAppointments__c</FIELD><FIELD NAME="Description" /><FIELD NAME="Type">Stored Procedure</FIELD><FIELD NAME="DB">APTIFY</FIELD><FIELD NAME="SQLText">CREATE PROCEDURE [dbo].[spGeteBusiness6_0GetPetInfoAndAppointments__c] 
+(      
+	@PetID INT = -1,
+	@OwnerID INT 
+)
+AS 
+BEGIN
+	SELECT 
+		p.ID,
+		p.Name,
+		p.OwnerID, 
+		p1.NameWCompany  'Owner',
+		p.AnimalSizeID, 
+		Aptify_as.Name  'AnimalSize',
+		p.PetBreedID, 
+		pb.Name  'PetBreed',
+		p.AnimalTypeID, 
+		at.Name  'AnimalType', 
+		at.AnimalGroup  'AnimalGroup'
+	FROM 
+		Pet__c p
+		INNER JOIN 
+			Person    p1 
+			ON 
+				p.OwnerID=p1.ID
+		INNER JOIN 
+			AnimalSize__c    Aptify_as 
+			ON 
+				p.AnimalSizeID=Aptify_as.ID
+		INNER JOIN 
+			PetBreed__c    pb 
+			ON 
+				p.PetBreedID=pb.ID
+		INNER JOIN 
+			vwAnimalTypes__c    at 
+			ON 
+				p.AnimalTypeID=at.ID
+	WHERE (p.ID = @PetID OR @PetID = -1)
+		AND p.OwnerID = @OwnerID;
+		
+	SELECT 
+		pa.ID,
+		pa.PetID, 
+		p.Name  'PetName',
+		pa.AppointmentType,
+		pa.AppointmentDate,
+		pa.Comments
+	FROM 
+		PetAppointment__c pa
+		INNER JOIN 
+			Pet__c    p 
+			ON 
+				pa.PetID=p.ID
+	WHERE (p.ID = @PetID OR @PetID = -1)
+		AND p.OwnerID = @OwnerID;
+END</FIELD><FIELD NAME="GrantSQLText">grant execute on spGeteBusiness6_0GetPetInfoAndAppointments__c to EndUsers;</FIELD><FIELD NAME="IsGenerated">0</FIELD><FIELD NAME="IsGrantSQLGenerated">0</FIELD><SUBTYPE NAME="DBObjectRequirement" /></OBJECT>

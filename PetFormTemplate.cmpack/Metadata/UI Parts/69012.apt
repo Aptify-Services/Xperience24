@@ -1,0 +1,96 @@
+<OBJECT CLASS="UI Parts" ID="69012" FULL="FULL" VERSION="1129710"><FIELD NAME="Name">Form Template ID:25467 Form Template CSS</FIELD><FIELD NAME="UIPartTypeID">3</FIELD><FIELD NAME="UIPartType">CSS</FIELD><FIELD NAME="Description">Form Template CSS</FIELD><FIELD NAME="Generated">1</FIELD><FIELD NAME="KeyValue" /><FIELD NAME="Text">&lt;style&gt;
+ .ftp-tab-131749 {
+width: 100%;
+}
+ .ftp-st-131750 {
+width: 100%;
+}
+.ft-25465 &gt; .row-0 {
+width: 100%;
+}
+.ft-25465 &gt; .row-0 &gt; .ftp-field-131751 {
+width: 99.63%;
+margin-left: 0.36363%;
+margin-top: 4px;
+}
+.ft-25465 &gt; .row-1 {
+width: 100%;
+}
+.ft-25465 &gt; .row-1 &gt; .ftp-field-131752 {
+width: 99.63%;
+margin-left: 0.36363%;
+margin-top: 4px;
+}
+.ft-25465 &gt; .row-2 {
+width: 100%;
+}
+.ft-25465 &gt; .row-2 &gt; .ftp-field-131753 {
+width: 99.63%;
+margin-left: 0.36363%;
+margin-top: 5px;
+}
+.ft-25465 &gt; .row-3 {
+width: 100%;
+}
+.ft-25465 &gt; .row-3 &gt; .ftp-field-131754 {
+width: 99.63%;
+margin-left: 0.36363%;
+margin-top: 5px;
+}
+.ft-25465 &gt; .row-4 {
+width: 100%;
+}
+.ft-25465 &gt; .row-4 &gt; .ftp-field-131755 {
+width: 99.63%;
+margin-left: 0.36363%;
+margin-top: 5px;
+}
+.ft-25465 &gt; .row-5 &gt; .cell-0 {
+height: 100%;
+width: 50.18%;
+}
+.ft-25465 &gt; .row-5 &gt; .cell-0 &gt; .ftp-field-131757 {
+width: 54.34%;
+margin-left: 45.65217%;
+margin-top: 31px;
+}
+.ft-25465 &gt; .row-5 &gt; .cell-1 {
+height: 100%;
+width: 43.63%;
+}
+.ft-25465 &gt; .row-5 &gt; .cell-1 &gt; .ftp-field-131759 {
+width: 62.5%;
+margin-left: 37.5%;
+margin-top: 30px;
+}
+.ft-25465 &gt; .row-6 &gt; .cell-0 {
+height: 100%;
+width: 50.18%;
+}
+.ft-25465 &gt; .row-6 &gt; .cell-0 &gt; .ftp-field-131758 {
+width: 54.34%;
+margin-left: 45.65217%;
+margin-top: 27px;
+}
+.ft-25465 &gt; .row-6 &gt; .cell-1 {
+height: 100%;
+width: 43.81%;
+}
+.ft-25465 &gt; .row-6 &gt; .cell-1 &gt; .ftp-field-131760 {
+width: 62.24%;
+margin-left: 37.75933%;
+margin-top: 27px;
+}
+.ft-25465 &gt; .row-7 &gt; .ftp-field-131761 {
+width: 27.27%;
+margin-left: 66.72727%;
+margin-top: 35px;
+}
+.ft-25466 &gt; .row-1 {
+width: 100%;
+}
+.ft-25466 &gt; .row-1 &gt; .ftp-field-131756 {
+width: 100%;
+}
+
+&lt;/style&gt;</FIELD><FIELD NAME="DateUpdated">20240922051823</FIELD><FIELD NAME="UniqueID">de3c9a4e-f6c5-44a1-a7a5-bd27628bb7de</FIELD><SUBTYPE NAME="UIPartLinks" /></OBJECT>

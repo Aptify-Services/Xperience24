@@ -1,0 +1,40 @@
+<OBJECT CLASS="Database Objects" ID="20970" FULL="FULL" VERSION="1126853"><FIELD NAME="Name">spGeteBusiness6_0Pets__c</FIELD><FIELD NAME="Description" /><FIELD NAME="Type">Stored Procedure</FIELD><FIELD NAME="DB">APTIFY</FIELD><FIELD NAME="SQLText">CREATE PROCEDURE [dbo].[spGeteBusiness6_0Pets__c] 
+(      
+	@Request_Petid INT = -1,
+	@AuthenticatedAttributes_AuthenticatedPrincipalRecordId INT 
+)
+AS 
+BEGIN
+	SELECT 
+		p.ID,
+		p.Name,
+		p.OwnerID, 
+		p1.NameWCompany  'Owner',
+		p.AnimalSizeID, 
+		Aptify_as.Name  'AnimalSize',
+		p.PetBreedID, 
+		pb.Name  'PetBreed',
+		p.AnimalTypeID, 
+		at.Name  'AnimalType', 
+		at.AnimalGroup  'AnimalGroup'
+	FROM 
+		Pet__c p
+		INNER JOIN 
+			Person    p1 
+			ON 
+				p.OwnerID=p1.ID
+		INNER JOIN 
+			AnimalSize__c    Aptify_as 
+			ON 
+				p.AnimalSizeID=Aptify_as.ID
+		INNER JOIN 
+			PetBreed__c    pb 
+			ON 
+				p.PetBreedID=pb.ID
+		INNER JOIN 
+			vwAnimalTypes__c    at 
+			ON 
+				p.AnimalTypeID=at.ID
+	WHERE (p.ID = @Request_Petid OR @Request_Petid IS NULL)
+		AND p.OwnerID = @AuthenticatedAttributes_AuthenticatedPrincipalRecordId;
+END</FIELD><FIELD NAME="GrantSQLText">grant execute on spGeteBusiness6_0Pets__c to EndUsers;</FIELD><FIELD NAME="IsGenerated">0</FIELD><FIELD NAME="IsGrantSQLGenerated">0</FIELD><SUBTYPE NAME="DBObjectRequirement" /></OBJECT>

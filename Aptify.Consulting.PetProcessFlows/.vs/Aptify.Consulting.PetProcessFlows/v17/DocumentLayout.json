@@ -1,0 +1,108 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3588EDE5-51FA-4D14-8BC3-DF0271477675}|Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj|C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\aptify.consulting.petprocessflows\\processcomponents\\getpetforminformationpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3588EDE5-51FA-4D14-8BC3-DF0271477675}|Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj|solutionrelative:aptify.consulting.petprocessflows\\processcomponents\\getpetforminformationpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3588EDE5-51FA-4D14-8BC3-DF0271477675}|Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj|C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\aptify.consulting.petprocessflows\\processcomponents\\getpetandappointmentspc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3588EDE5-51FA-4D14-8BC3-DF0271477675}|Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj|solutionrelative:aptify.consulting.petprocessflows\\processcomponents\\getpetandappointmentspc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Aptify.Consulting.PetProcessFlows||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3588EDE5-51FA-4D14-8BC3-DF0271477675}|Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj|C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\aptify.consulting.petprocessflows\\processcomponents\\afterpetcreatedpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3588EDE5-51FA-4D14-8BC3-DF0271477675}|Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj|solutionrelative:aptify.consulting.petprocessflows\\processcomponents\\afterpetcreatedpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3588EDE5-51FA-4D14-8BC3-DF0271477675}|Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj|C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\aptify.consulting.petprocessflows\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3588EDE5-51FA-4D14-8BC3-DF0271477675}|Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj|solutionrelative:aptify.consulting.petprocessflows\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3588EDE5-51FA-4D14-8BC3-DF0271477675}|Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj|c:\\users\\javi.garcia\\onedrive - community brands\\clients\\training\\aptify.consulting.petprocessflows\\aptify.consulting.petprocessflows\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{99b8fa2f-ab90-4f57-9c32-949f146f1914}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GetPetFormInformationPC.cs",
+              "DocumentMoniker": "C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows\\ProcessComponents\\GetPetFormInformationPC.cs",
+              "RelativeDocumentMoniker": "Aptify.Consulting.PetProcessFlows\\ProcessComponents\\GetPetFormInformationPC.cs",
+              "ToolTip": "C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows\\ProcessComponents\\GetPetFormInformationPC.cs",
+              "RelativeToolTip": "Aptify.Consulting.PetProcessFlows\\ProcessComponents\\GetPetFormInformationPC.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABEAAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T19:48:07.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GetPetAndAppointmentsPC.cs",
+              "DocumentMoniker": "C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows\\ProcessComponents\\GetPetAndAppointmentsPC.cs",
+              "RelativeDocumentMoniker": "Aptify.Consulting.PetProcessFlows\\ProcessComponents\\GetPetAndAppointmentsPC.cs",
+              "ToolTip": "C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows\\ProcessComponents\\GetPetAndAppointmentsPC.cs",
+              "RelativeToolTip": "Aptify.Consulting.PetProcessFlows\\ProcessComponents\\GetPetAndAppointmentsPC.cs",
+              "ViewState": "AQIAAG8AAAAAMjMzMzMGwJAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T16:37:50.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Aptify.Consulting.PetProcessFlows",
+              "DocumentMoniker": "C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj",
+              "RelativeDocumentMoniker": "Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj",
+              "ToolTip": "C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj",
+              "RelativeToolTip": "Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-08-17T00:42:02.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "Aptify.Consulting.PetProcessFlows\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "Aptify.Consulting.PetProcessFlows\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T00:42:00.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AfterPetCreatedPC.cs",
+              "DocumentMoniker": "C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows\\ProcessComponents\\AfterPetCreatedPC.cs",
+              "RelativeDocumentMoniker": "Aptify.Consulting.PetProcessFlows\\ProcessComponents\\AfterPetCreatedPC.cs",
+              "ToolTip": "C:\\Users\\javi.garcia\\OneDrive - Community Brands\\Clients\\Training\\Aptify.Consulting.PetProcessFlows\\Aptify.Consulting.PetProcessFlows\\ProcessComponents\\AfterPetCreatedPC.cs",
+              "RelativeToolTip": "Aptify.Consulting.PetProcessFlows\\ProcessComponents\\AfterPetCreatedPC.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T00:27:56.121Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
