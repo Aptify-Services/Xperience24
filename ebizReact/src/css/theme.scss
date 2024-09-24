@@ -1,0 +1,427 @@
+/*Override PrimeReact Viva Theme Variables Css for Ebiz Start*/
+/*Colors Start*/
+$primaryColor: #8017e1 !default;
+$primaryLightColor: #a899f7 !default;
+$primaryDarkColor: scale-color($primaryColor, $lightness: -10%) !default;
+$borderColor: #d9d9d9 !default;
+
+$highlightBg: $primaryColor !default;
+$highlightTextColor: #ffffff !default;
+
+$textColor: #000000;
+$textSecondaryColor: #898989;
+$textButtonHoverBgOpacity: 0.1 !default;
+$outlinedButtonBorder: 1px solid !default;
+
+$shade300: #ebebeb !default;
+//Toast Css
+$toastIconFontSize: 1.5rem !default;
+$toastOpacity: 1 !default;
+
+//badge and tag
+$badgeMinWidth: 1.25rem !default;
+$badgeHeight: 1.25rem !default;
+
+//Steps Css
+$stepsItemNumberColor: $textColor;
+$stepsItemTextColor: $textColor;
+//severities
+$infoMessageBg: rgba(219, 234, 254, 1) !default;
+$infoMessageBorder: solid #3b82f6 !default;
+$infoMessageTextColor: #3b82f6 !default;
+$infoMessageIconColor: #3b82f6 !default;
+$successMessageBg: rgba(228, 248, 240, 1) !default;
+$successMessageBorder: solid #1ea97c !default;
+$successMessageTextColor: #1ea97c !default;
+$successMessageIconColor: #1ea97c !default;
+$warningMessageBg: rgba(255, 242, 226, 1) !default;
+$warningMessageBorder: solid #cc8925 !default;
+$warningMessageTextColor: #cc8925 !default;
+$warningMessageIconColor: #cc8925 !default;
+$errorMessageBg: rgba(255, 231, 230, 1) !default;
+$errorMessageBorder: solid #ff5757 !default;
+$errorMessageTextColor: #ff5757 !default;
+$errorMessageIconColor: #ff5757 !default;
+/*Override PrimeFlex Css Start*/
+
+$successButtonBg: #1ea97c;
+
+/*Form Layout Start*/
+// $fieldMargin: 1.25rem;
+/*Form Layout End*/
+/*Override PrimeFlex Css End*/
+
+/*Override PrimeReact Viva Theme Variables Css for Ebiz End*/
+@import "primeflex/primeflex";
+@import "./themes/viva/viva-light/variables";
+@import "./themes/viva/viva-light/_fonts";
+@import "./theme-base/components";
+@import "./themes/viva/viva-light/_extensions";
+/*Custom Global Css for E-Biz*/
+/*Custom Container Start*/
+@import "./customContainer/customContainers.scss";
+/*Custom Container End*/
+/* Global Css Reset Start*/
+html {
+  font-size: 16px;
+}
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+body {
+  font-family:
+    "Poppins",
+    "sans-serif",
+    "Segoe UI",
+    "Roboto",
+    -apple-system,
+    BlinkMacSystemFont;
+  color: $textColor;
+  margin: 0px;
+  padding: 0px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin: 0px;
+}
+p {
+  margin: 0px;
+  margin-bottom: 0.5rem;
+}
+label {
+  color: $textSecondaryColor;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+ul li {
+  list-style: none;
+}
+/* Global Css Reset End*/
+// for border
+.eb-border-gray {
+  border: 1px solid $borderColor;
+  border-radius: 10px;
+}
+// for product images
+.eb-cover-image {
+  object-fit: contain;
+}
+// for Toaster
+.p-toast {
+  font-size: 0.9rem;
+  top: 70px !important;
+  right: 0px !important;
+}
+.p-carousel-prev,
+.p-carousel-next {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid $primaryColor !important;
+}
+.p-panel {
+  .p-panel-header {
+    border-bottom: 2px solid $shade300;
+  }
+}
+.p-panel-toggleable {
+  .p-panel-header {
+    border-bottom: 0px;
+  }
+  .p-toggleable-content {
+    border-top: 2px solid $shade300;
+  }
+}
+//Datable Checkbox Css Start
+.p-checkbox .p-checkbox-box.p-highlight {
+  background: $primaryColor;
+  border-color: $primaryColor;
+}
+.p-highlight .p-checkbox .p-checkbox-box.p-highlight {
+  background: $primaryColor;
+  border-color: $highlightTextColor;
+}
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
+  border-color: $primaryColor;
+}
+.p-checkbox .p-checkbox-box.p-highlight .p-checkbox-icon {
+  color: $highlightTextColor;
+}
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+  background-color: $primaryColor;
+  border-color: $highlightTextColor;
+  color: $highlightTextColor;
+}
+.p-checkbox .p-checkbox-box {
+  cursor: pointer;
+}
+.p-paginator {
+  border: none;
+}
+.p-panel .p-panel-header {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+.p-panel .p-panel-content {
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+.eb-icon-only-btn {
+  width: 2.3rem;
+  height: 2.3rem;
+}
+.p-radiobutton + label,
+.p-checkbox + label {
+  cursor: pointer;
+}
+.eb-word-break {
+  word-break: break-word;
+}
+/*Add Address Page Styling Start*/
+.eb-address-card:nth-child(odd) > div {
+  margin-right: 0.5rem;
+}
+.eb-address-card:nth-child(even) > div {
+  margin-left: 0.5rem;
+}
+/*Add Address Page Styling End*/
+/*Loader Css Start*/
+.eb-loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 3;
+}
+.eb-loader-wrapper:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  display: block;
+  opacity: 0.8;
+}
+.loading-text {
+  position: relative;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.eb-loader {
+  --c2: #f8b13b;
+  width: 40px;
+  height: 80px;
+  border-top: 4px solid $primaryColor;
+  border-bottom: 4px solid $primaryColor;
+  background: linear-gradient(90deg, $primaryColor 2px, var(--c2) 0 5px, $primaryColor 0) center/7px
+    8px no-repeat;
+  display: grid;
+  overflow: hidden;
+  animation: t5-0 2s infinite linear;
+}
+.eb-loader::before,
+.eb-loader::after {
+  content: "";
+  grid-area: 1/1;
+  width: 75%;
+  height: calc(50% - 4px);
+  margin: 0 auto;
+  border: 2px solid $primaryColor;
+  border-top: 0;
+  border-radius: 0 0 40% 40%;
+  -webkit-mask:
+    linear-gradient(#000 0 0) bottom/4px 2px no-repeat,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  background:
+    linear-gradient(var(--d, 0deg), var(--c2) 50%, #0000 0) bottom / 100% 205%,
+    linear-gradient(var(--c2) 0 0) center/0 100%;
+  background-repeat: no-repeat;
+  animation: inherit;
+  animation-name: t5-1;
+}
+
+.eb-loader::after {
+  transform-origin: 50% calc(100% + 2px);
+  transform: scaleY(-1);
+  --s: 3px;
+  --d: 180deg;
+}
+
+.eb-textStrikeThrough {
+  text-decoration-line: line-through;
+}
+
+.p-password {
+  .p-icon {
+    z-index: 100 !important;
+  }
+}
+
+@keyframes t5-0 {
+  80% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
+
+@keyframes t5-1 {
+  10%,
+  70% {
+    background-size:
+      100% 205%,
+      var(--s, 0) 100%;
+  }
+  70%,
+  100% {
+    background-position: top, center;
+  }
+}
+/*Loader Css End*/
+/*Card Payment Css Start*/
+.eb-accepted-card .eb-card {
+  float: left;
+  width: 55px;
+  height: 34px;
+  text-indent: -9999px;
+  background-position: 0 0;
+  margin-right: 1px;
+  border: 1px solid #ccc;
+  margin-bottom: 0;
+}
+
+.eb-accepted-card .eb-card.cdisabled {
+  background-position: 0 -34px;
+  opacity: 0.3;
+}
+
+.eb-accepted-card .eb-card.visa {
+  background-image: url("../assets/images/cards/card-visa.gif");
+}
+
+.eb-accepted-card .eb-card.amex {
+  background-image: url("../assets/images/cards/card-amex.gif");
+}
+
+.eb-accepted-card .eb-card.master {
+  background-image: url("../assets/images/cards/card-mastercard.gif");
+}
+
+.eb-accepted-card .eb-card.discover {
+  background-image: url("../assets/images/cards/card-discover.gif");
+}
+
+.eb-required::after {
+  content: " *";
+  color: red;
+}
+
+.eb-payoff-table td:last-child input {
+  max-width: 100px !important;
+}
+
+.eb-add-to-cart-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.eb-add-to-cart-btn .p-button-label {
+  flex-grow: 0;
+  transition: none !important;
+}
+
+.eb-link {
+  font-weight: bold;
+}
+
+.eb-link:hover {
+  text-decoration: underline;
+  color: $primaryColor;
+}
+
+.eb-overflow {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.eb-overflow--single-line {
+  -webkit-line-clamp: 1;
+}
+
+.eb-overflow--double-line {
+  -webkit-line-clamp: 2;
+}
+
+.eb-overflow--triple-line {
+  -webkit-line-clamp: 3;
+}
+
+@mixin eb-overflow($lines) {
+  @extend .eb-overflow;
+  -webkit-line-clamp: $lines;
+}
+
+@for $i from 1 through 10 {
+  .eb-overflow--#{$i} {
+    @include eb-overflow($i);
+  }
+}
+
+/*Card Payment Css End*/
+/*Tablet and Mobile Responsive Start*/
+@media (max-width: 991px) {
+  html {
+    font-size: 90%;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .eb-address-card:nth-child(odd) > div {
+    margin-right: 0;
+  }
+  .eb-address-card:nth-child(even) > div {
+    margin-left: 0;
+  }
+  .p-paginator .p-dropdown {
+    margin-left: 0;
+  }
+  .eb-tab-view .p-steps-title {
+    font-size: 80%;
+  }
+}
+@media (max-width: 767px) {
+  html {
+    font-size: 80%;
+  }
+  .p-carousel-prev,
+  .p-carousel-next {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  // .p-button{
+  //     padding: 0.5rem;
+  //     font-size: 0.75rem;
+  // }
+}
+/*Tablet and Mobile Responsive End*/

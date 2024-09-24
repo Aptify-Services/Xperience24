@@ -1,0 +1,21 @@
+/* ShimmerWrapper.css */
+
+.shimmer-wrapper {
+  width: 100%;
+}
+
+.shimmer {
+  background: linear-gradient(-45deg, #eee 25%, #f5f5f5 50%, #eee 75%);
+  background-size: 400% 400%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}

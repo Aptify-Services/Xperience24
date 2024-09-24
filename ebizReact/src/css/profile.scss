@@ -1,0 +1,31 @@
+.profileBlock {
+  padding: 3vh;
+  border: ridge;
+  border-color: #6360601c;
+}
+
+.checkboxColumnStyle {
+  max-inline-size: fit-content !important;
+}
+
+.profileLeftMenuStyle {
+  width: auto !important;
+}
+
+.DemographicsLabelStyle {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  color: #444444;
+}
+
+.eb-profile-text-color {
+  color: #444444;
+}
+
+.eb-input-field-disable-style {
+  background-color: #d9d9d9;
+  border: 1px solid #ced4da;
+}

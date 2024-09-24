@@ -1,0 +1,12 @@
+.space-y-1 > *:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.space-x-1 > *:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.required::after {
+  content: " *";
+  color: red;
+}

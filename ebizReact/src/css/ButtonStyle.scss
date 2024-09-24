@@ -1,0 +1,16 @@
+.floating-button {
+  position: fixed;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.floating-button--right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.floating-button--left {
+  bottom: 20px;
+  left: 20px;
+}

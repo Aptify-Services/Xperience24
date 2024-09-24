@@ -1,0 +1,157 @@
+{
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@", "./src"],
+          ["@api", "./src/api"],
+          ["@assets", "./src/assets"],
+          ["@components", "./src/components"],
+          ["@configuration", "./src/configuration"],
+          ["@constants", "./src/constants"],
+          ["@context", "./src/context"],
+          ["@css", "./src/css"],
+          ["@hooks", "./src/hooks"],
+          ["@pages", "./src/pages"],
+          ["@routes", "./src/routes"],
+          ["@store", "./src/store"],
+          ["@utils", "./src/utils"],
+          ["@validations", "./src/validations"]
+        ],
+        "extensions": [".js", ".jsx", ".json"]
+      }
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "overrides": [
+    {
+      "files": ["*.jsx", "*.js"]
+    }
+  ],
+  "extends": [
+    "plugin:import/recommended",
+    "eslint:recommended", // Use ESLint's recommended rules
+    "plugin:react/recommended", // Use recommended rules from eslint-plugin-react
+    "plugin:import/recommended", // Use recommended rules from eslint-plugin-import
+    "plugin:prettier/recommended", // Integrate Prettier with ESLint
+    "plugin:react-hooks/recommended", // Enable recommended rules from eslint-plugin-react-hooks
+    "plugin:jsx-a11y/recommended" //Enable accessibility checks
+  ],
+  "plugins": ["react", "prettier", "react-hooks", "import", "jsx-a11y"], // Define plugins used
+  "rules": {
+    "prettier/prettier": [
+      "off", // Turn off Prettier's formatting rules to avoid conflicts (since using ESLint with Prettier)
+      {
+        "endOfLine": "auto", // Ensure consistent line endings
+        "parser": "flow" // Specify the parser (optional, here set to 'flow')
+      }
+    ],
+    "no-undef": "error", // Disallow the use of undeclared variables
+    // "react/forbid-component-props": [
+    //   "warn", // Warn about forbidden props in React components
+    //   {
+    //     "forbid": ["style"] // Example: forbid the use of 'style' prop in React components
+    //   }
+    // ],
+    "max-len": [
+      "error",
+      {
+        "code": 150
+      }
+    ],
+    "react/jsx-max-props-per-line": [
+      2, // Error if props exceed the specified limit per line
+      {
+        "maximum": 1, // Example: allow only 1 prop per line
+        "when": "multiline" // Apply this rule only when props are on multiple lines
+      }
+    ],
+    "no-var": "warn", // Warn against using var declarations
+    "prefer-const": "error", // Error if let declarations are used instead of const when possible
+    "function-paren-newline": 0, // Allow/disallow newlines around function parentheses
+    "indent": 0, // Disable indentation rules (handled by Prettier)
+    "eqeqeq": 0, // Allow loose equality checks (e.g., == instead of ===)
+    "comma-dangle": 1, // Warn about missing trailing commas in object literals
+    "no-debugger": 1, // Warn about 'debugger' statements in code
+    "no-extra-semi": 1, // Warn about unnecessary semicolons
+    "no-irregular-whitespace": 0, // Allow irregular whitespace characters
+    "semi-spacing": 1, // Warn about spacing around semicolons
+    "valid-jsdoc": [
+      2, // Enable JSDoc validation
+      {
+        "requireReturn": false // Example: Do not require @return tag in JSDoc comments
+      }
+    ],
+    "no-unused-vars": [
+      "error", // Error if there are unused variables
+      {
+        "argsIgnorePattern": "^_" // Example: Ignore unused variables starting with '_'
+      }
+    ],
+    "no-console": [
+      "error", // Warn if console.* methods are used
+      {
+        "allow": ["warn", "error", "info"] // Example: Allow console.warn, console.error, console.info
+      }
+    ],
+    "semi": ["error", "always"], // Require semicolons at the end of statements
+    "no-shadow": [
+      "error", // Error if variable shadowing occurs
+      {
+        "builtinGlobals": false, // Do not allow shadowing of built-in globals (like Array, Object, etc.)
+        "hoist": "functions", // Allow shadowing within function scopes only
+        "allow": [] // Do not allow specific names to be shadowed
+      }
+    ],
+    "react/display-name": 2, // Error if the displayName property is missing in a named component
+    "react/forbid-prop-types": [
+      "error", // Error if certain propTypes are used
+      {
+        "forbid": ["node", "function"] // Example: forbid the use of 'node' and 'function' propTypes
+      }
+    ],
+    "react/jsx-boolean-value": 1, // Warn about unnecessary boolean attributes in JSX
+    "react/jsx-curly-spacing": 1, // Warn about inconsistent spacing around JSX curly braces
+    "react/jsx-no-duplicate-props": 1, // Warn if duplicate props are found in JSX
+    "react/jsx-no-undef": 2, // Error if used JSX elements are not defined
+    "react/jsx-uses-react": 1, // Warn if React is not in scope when using JSX
+    "react/jsx-uses-vars": 1, // Warn about unused variables in JSX
+    "react/no-danger": 0, // Warn about using dangerouslySetInnerHTML in JSX
+    "react/no-did-mount-set-state": 1, // Warn about setting state in componentDidMount
+    "react/no-did-update-set-state": 1, // Warn about setting state in componentDidUpdate
+    "react/no-direct-mutation-state": 1, // Warn about directly mutating state
+    "react/no-multi-comp": 1, // Warn about multiple components in a single file
+    "react/no-set-state": 1, // Warn about using setState in components
+    "react/no-unknown-property": 1, // Warn about using unknown DOM property attributes in JSX
+    "react/react-in-jsx-scope": 0, // Allow JSX to use React without explicitly importing it
+    "react/self-closing-comp": 1, // Warn about non-self-closing components in JSX
+    "react/sort-comp": 1, // Enforce order and grouping of component methods
+    "react/prop-types": 1, // Warn about missing propTypes declarations in components
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"]],
+        "newlines-between": "always"
+      }
+    ],
+    "import/no-unresolved": 2, // Allow unresolved imports (handled by module bundler or resolver)
+    "import/named": "error", // Error if named imports are incorrectly used
+    "import/default": 1, // Warn if default imports are incorrectly used
+    "import/namespace": 1, // Warn if namespace imports are incorrectly used
+    "import/newline-after-import": "error"
+  }
+}

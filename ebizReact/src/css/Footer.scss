@@ -1,0 +1,28 @@
+/* Footer.css */
+.footer {
+  background-color: #f0f0f0;
+  /* Grey background color */
+  padding: 10px 0;
+  /* Add padding */
+}
+
+.footer-text {
+  font-size: 12px;
+  /* Reduce text size */
+  color: #555;
+  /* Dark grey text color */
+  margin: 0;
+  /* Reset margin */
+}
+
+.privacy-link {
+  color: #007bff;
+  /* Blue color for the privacy policy link */
+  text-decoration: none;
+  /* Remove underline */
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
+  /* Add underline on hover */
+}
